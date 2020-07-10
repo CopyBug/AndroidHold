@@ -25,8 +25,8 @@ import androidx.annotation.Nullable;
 
 import com.example.framework.R;
 import com.example.framework.databinding.ActImageOpBinding;
-import com.example.framework.imageFun.HWImageManager;
 import com.hjq.image.ImageLoader;
+import com.hjq.image.imageFun.HWImageManager;
 import com.sjz20200427.base.BaseActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 

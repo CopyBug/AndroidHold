@@ -1,10 +1,9 @@
-package com.example.framework.imageFun;
+package com.hjq.image.imageFun;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 
 import java.io.File;
-import java.net.PortUnreachableException;
 
 /**
  * Time       : 2020/07/07 上午11:03

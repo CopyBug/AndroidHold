@@ -1,4 +1,4 @@
-package com.example.framework.imageFun;
+package com.hjq.image.imageFun;
 
 /**
  * Time       : 2020/07/07 上午10:47

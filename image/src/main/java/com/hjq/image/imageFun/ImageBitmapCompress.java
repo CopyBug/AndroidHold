@@ -1,4 +1,4 @@
-package com.example.framework.imageFun;
+package com.hjq.image.imageFun;
 
 import android.content.Context;
 import android.content.Intent;

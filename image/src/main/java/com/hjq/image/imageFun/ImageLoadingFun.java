@@ -1,4 +1,4 @@
-package com.example.framework.imageFun;
+package com.hjq.image.imageFun;
 
 import android.widget.ImageView;
 
@@ -7,7 +7,6 @@ import androidx.annotation.DrawableRes;
 import androidx.databinding.BindingAdapter;
 
 import com.hjq.image.ImageLoader;
-import com.hjq.image.LoadingImageView;
 
 /**
  * Time       : 2020/07/06 下午2:39

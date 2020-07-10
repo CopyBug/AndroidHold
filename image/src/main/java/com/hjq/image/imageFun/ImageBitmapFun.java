@@ -1,4 +1,4 @@
-package com.example.framework.imageFun;
+package com.hjq.image.imageFun;
 
 import android.app.Activity;
 import android.content.Context;
@@ -34,7 +34,7 @@ public interface ImageBitmapFun {
      * @return
      */
     File imageSave(Bitmap bitmap, String fileName, Activity mActivity);
-    Observable<File> imageSaveRx(Bitmap bitmap,String fileName,Activity mActivity);
+    Observable<File> imageSaveRx(Bitmap bitmap, String fileName, Activity mActivity);
 
     /**
      * 图片压缩
@@ -57,28 +57,28 @@ public interface ImageBitmapFun {
      * @param gravity  合并的位置
      * @param bitmaps
      */
-    Bitmap imageMerge(int gravity,Bitmap ...bitmaps);
+    Bitmap imageMerge(int gravity, Bitmap... bitmaps);
 
     /**
      * 打开相册并且返回数据
      * @param act
      * @param respCode
      */
-    void imageOpenPhoto(Activity act,int respCode);
+    void imageOpenPhoto(Activity act, int respCode);
 
     /**
      * 打开相机并且返回数据
      * @param act
      * @param respCode
      */
-    void imageOpenCamera(Activity act,int respCode);
+    void imageOpenCamera(Activity act, int respCode);
 
     /**
      * 图像的高亮
      * @param bitmap
      * @param highLight 是否高亮
      */
-    void imageHighlight(Bitmap bitmap,boolean highLight);
+    void imageHighlight(Bitmap bitmap, boolean highLight);
 
     /**
      * 文字生成二维码
@@ -88,7 +88,7 @@ public interface ImageBitmapFun {
      * @param height
      * @return
      */
-    Bitmap imageErCode(String erString, Context mContext,int width,int height);
+    Bitmap imageErCode(String erString, Context mContext, int width, int height);
 
     /**
      * 二维码解码
@@ -103,7 +103,7 @@ public interface ImageBitmapFun {
      * @param scale
      * @return
      */
-    Bitmap iamgeZoom(Bitmap image,float scale);
+    Bitmap iamgeZoom(Bitmap image, float scale);
 
 
 }

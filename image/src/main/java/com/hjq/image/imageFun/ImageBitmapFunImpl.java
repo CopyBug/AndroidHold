@@ -1,19 +1,15 @@
-package com.example.framework.imageFun;
+package com.hjq.image.imageFun;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Toast;
-
-import com.example.framework.module.ImageOpAct;
 
 import java.io.File;
 import java.io.FileOutputStream;
