@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FrameWork</string>
+    <string name="fn_image_show">图片</string>
+    <string name="fn_image_op">图片操作</string>
+    <string name="fn_image_shot_save">截图且保存</string>
+    <string name="fn_image_photo">打开相册</string>
+    <string name="fn_image_photo_crop">相册+裁剪</string>
+    <string name="fn_image_crop">图片裁剪</string>
+    <string name="fn_image_merge_top">图片合并上下</string>
+    <string name="fn_image_merge_right">图片合并左右</string>
+    <string name="fn_image_merge">图片合并</string>
+</resources>

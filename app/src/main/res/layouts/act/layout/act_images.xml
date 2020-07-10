@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp_32"
+                android:glideRoundSrc="@{imageUrl}"
+                android:layout_height="32dp"
+                />
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="圆角" />
+
+            <ImageView
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="@dimen/dp_32"
+                android:glideRoundColorSrc="@{imageUrl}"
+                android:glideRoundColor="@{@android:color/black}"
+                android:layout_height="32dp"
+                />
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="圆形图片带边框" />
+
+            <ImageView
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="@dimen/dp_300"
+                android:glideRecRoundSrc="@{imageUrl}"
+                android:glideRecRoundRadio="@{30}"
+                android:layout_height="@dimen/dp_400"></ImageView>
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="圆角带边框" />
+
+            <ImageView
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="@dimen/dp_300"
+                android:glideBlurTransSrc="@{imageUrl}"
+                android:glideBlurTransRadius="@{30}"
+                android:glideBlurTransSampling="@{5}"
+                android:layout_height="@dimen/dp_400"></ImageView>
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="毛玻璃" />
+
+            <ImageView
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="@dimen/dp_300"
+                android:glideRoundRadiusSrc="@{imageUrl}"
+                android:glideRoundRadiusTop="@{true}"
+                android:glideRoundRadiusBottom="@{false}"
+                android:glideRoundRadius="@{30}"
+                android:layout_height="@dimen/dp_400"></ImageView>
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上面圆角" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

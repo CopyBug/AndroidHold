@@ -1,0 +1,7 @@
+R_DEF: Internal format may change without notice
+local
+anim anim_start_loading
+drawable anim_loading
+drawable ic_loading
+drawable image_load_err
+drawable image_loading
