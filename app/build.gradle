@@ -48,6 +48,7 @@ dependencies {
     //glide封装
     implementation project(':image')
     implementation project(':base')
+    implementation project(':hwokhttp')
 //  权限申请
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.4'

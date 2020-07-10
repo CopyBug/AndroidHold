@@ -1,2 +1,2 @@
-include ':app', ':image', ':base'
+include ':app', ':image', ':base', ':hwokhttp'
 rootProject.name='FrameWork'
