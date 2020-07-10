@@ -11,6 +11,10 @@ android {
         // 混淆配置
         consumerProguardFiles 'proguard-glide.pro'
     }
+    // 数据绑定
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
