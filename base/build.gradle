@@ -4,7 +4,7 @@ android {
     compileSdkVersion rootProject.ext.compileVersion
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 14
         targetSdkVersion rootProject.ext.targetVersion
         // 混淆配置
         consumerProguardFiles 'proguard-base.pro'
