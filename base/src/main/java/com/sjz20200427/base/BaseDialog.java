@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BaseDialog extends AppCompatDialog implements
+public class  BaseDialog extends AppCompatDialog implements
         DialogInterface.OnShowListener,
         DialogInterface.OnCancelListener,
         DialogInterface.OnDismissListener {

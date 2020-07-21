@@ -9,4 +9,10 @@
     <string name="fn_image_merge_top">图片合并上下</string>
     <string name="fn_image_merge_right">图片合并左右</string>
     <string name="fn_image_merge">图片合并</string>
+    <string name="fn_net">网络请求</string>
+    <string name="fn_net_get">Get</string>
+    <string name="fn_net_post">Post</string>
+    <string name="fn_net_post_form">Post_Form</string>
+    <string name="fn_net_post_Body">Post_Json</string>
+    <string name="fn_net_post_File">Post_File</string>
 </resources>

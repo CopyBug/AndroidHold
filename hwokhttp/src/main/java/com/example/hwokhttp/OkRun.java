@@ -6,6 +6,8 @@ import android.os.Looper;
 import androidx.annotation.MainThread;
 
 import java.net.PortUnreachableException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -19,8 +21,9 @@ import okhttp3.OkHttpClient;
 public class OkRun {
     private static OkRun okRun;
     private OkHttpClient okHttpClient;
-    private final int CONNECT_TIME_OUT=10;              //连接超时
-    private final int READ_TIME_OUT=10;                 //读超时
+    private final int CONNECT_TIME_OUT = 10;              //连接超时
+    private final int READ_TIME_OUT = 10;                 //读超时
+    private BaseOkReq baseOkReq;
 
     public static OkRun okRun() {
         if (okRun == null) {
@@ -35,60 +38,66 @@ public class OkRun {
 
     public OkRun() {
         okHttpClient = new OkHttpClient.Builder()
-        .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
-        .readTimeout(READ_TIME_OUT,TimeUnit.SECONDS)
+                .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
+                .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
 //         .connectionPool()
-        .build();
+                .build();
 
     }
 
-    protected void doRun(Builder builder) {
+    protected <T> Observable<T> doRun(Builder<T> builder) {
         if (builder.reqMode == OkMode.GET) {
             //Get请求
+            baseOkReq = new OkGetReq<T>(okHttpClient, builder.api);
+            baseOkReq.param=builder.baseReqEntity.getReqMap();
+            return baseOkReq.<T>doGet();
         } else {
             //POST请求
+            baseOkReq = new OkPostReq<T>(okHttpClient, builder.api);
+            baseOkReq.param=builder.baseReqEntity.getReqMap();
+            switch (builder.reqMode) {
+                case POST:
+                    return baseOkReq.doPost();
+                case POST_BODY:
+                    return baseOkReq.doPostFromRx();
+                case POST_FORM:
+                    return baseOkReq.doPostJsonRx();
+                case POST_FILE:
+                    break;
+
+            }
         }
-    }
+        return null;
 
-    protected void doGet() {
-
-    }
-
-    protected void doPost() {
 
     }
 
-
-    public static class Builder {
+    public static class Builder<T> {
         private String api;
         private OkMode reqMode;
-        private OkMode paramMode;
-        private Class type;
+        private BaseReqEntity baseReqEntity;
+
+        public Builder() {
+
+        }
 
         public Builder api(String api) {
             this.api = api;
             return this;
         }
 
-        public Builder reqMode(OkMode reqMode) {
-            this.reqMode = reqMode;
+        public Builder setBaseReqEntity(BaseReqEntity baseReqEntity) {
+            this.baseReqEntity = baseReqEntity;
             return this;
         }
 
         public Builder paramMode(OkMode paramMode) {
-            this.paramMode = paramMode;
+            this.reqMode = paramMode;
             return this;
         }
 
-        public Builder type(Class type) {
-            this.type = type;
-            return this;
-        }
-
-
-        public <T> Observable<T> doRun() {
-            OkRun.okRun().doRun(this);
-            return null;
+        public  Observable<T> doRun() {
+            return   OkRun.okRun().<T>doRun(this);
         }
     }
 }

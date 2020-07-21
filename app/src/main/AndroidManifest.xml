@@ -42,6 +42,7 @@
         </activity>
         <activity android:name=".module.ImageAct" />
         <activity android:name=".module.ImageOpAct" />
+        <activity android:name=".module.NetOpAct" />
     </application>
 
 </manifest>

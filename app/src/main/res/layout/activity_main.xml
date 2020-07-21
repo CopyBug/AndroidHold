@@ -22,6 +22,11 @@
         style="@style/main_tv"
         app:elevation="@dimen/dp_0"
         android:text="@string/fn_image_op" />
+    <Button
 
+        android:id="@+id/main_net"
+        style="@style/main_tv"
+        app:elevation="@dimen/dp_0"
+        android:text="@string/fn_net" />
 </LinearLayout>
 </androidx.core.widget.NestedScrollView>

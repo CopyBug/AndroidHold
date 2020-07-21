@@ -6,5 +6,5 @@ package com.example.hwokhttp;
  * Description:
  */
 public enum  OkMode {
-    GET,POST,BODY,FORM
+    GET,POST,POST_BODY,POST_FORM,POST_FILE
 }

@@ -9,12 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.framework.module.ImageAct;
 import com.example.framework.module.ImageOpAct;
+import com.example.framework.module.NetOpAct;
 import com.sjz20200427.base.BaseActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private Button main_image_show;
     private Button main_image_op;
+    private Button main_net;
 
 
     @Override
@@ -25,9 +27,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void initView() {
         main_image_show = (Button) findViewById(R.id.main_image_show);
+        main_net = (Button) findViewById(R.id.main_net);
         main_image_op = (Button) findViewById(R.id.main_image_op);
         main_image_show.setOnClickListener(this);
         main_image_op.setOnClickListener(this);
+        main_net.setOnClickListener(this);
     }
 
 
@@ -51,6 +55,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.main_image_op:
                 //图片的操作处理
                 startActivity(ImageOpAct.class);
+                break;
+            case R.id.main_net:
+                //网络请求框架
+                startActivity(NetOpAct.class);
                 break;
         }
     }

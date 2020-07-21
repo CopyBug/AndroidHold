@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+        android:id="@+id/main_net_get"
+        style="@style/main_tv"
+        app:elevation="@dimen/dp_0"
+        android:text="@string/fn_net_get" />
+    <Button
+        android:id="@+id/main_net_post"
+        style="@style/main_tv"
+        app:elevation="@dimen/dp_0"
+        android:text="@string/fn_net_post" />
+
+    <Button
+        android:id="@+id/main_net_post_form"
+        style="@style/main_tv"
+        app:elevation="@dimen/dp_0"
+        android:text="@string/fn_net_post_form" />
+    <Button
+        android:id="@+id/main_net_post_body"
+        style="@style/main_tv"
+        app:elevation="@dimen/dp_0"
+        android:text="@string/fn_net_post_Body" />
+
+
+    <Button
+        android:id="@+id/main_net_post_file"
+        style="@style/main_tv"
+        app:elevation="@dimen/dp_0"
+        android:text="@string/fn_net_post_File" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="@dimen/dp_12"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+</LinearLayout>

@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="14"
-6-->/home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
+6-->D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="28" />
-7-->/home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
+7-->D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
 8
 9</manifest>

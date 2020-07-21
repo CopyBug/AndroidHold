@@ -6,9 +6,9 @@ package com.example.hwokhttp;
  * Description:
  */
 public class HwNetManager {
-    private HwNetManager hwNetManager;
+    private static HwNetManager hwNetManager;
 
-    public HwNetManager getHwNetManager() {
+    public static HwNetManager getHwNetManager() {
         if(hwNetManager==null){
             synchronized (HwNetManager.class){
                 if(hwNetManager==null){
@@ -18,4 +18,5 @@ public class HwNetManager {
         }
         return hwNetManager;
     }
+
 }

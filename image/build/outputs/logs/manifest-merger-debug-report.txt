@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml:1:1-36
-INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml:1:1-36
-INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml:1:1-36
+ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-36
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-36
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-36
 	package
-		ADDED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml:1:11-33
-		INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
-		INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:11-33
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml:1:1-36
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-36
 uses-sdk
-INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
-INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
-INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
-INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
-		ADDED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
-		INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
-		ADDED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
-		INJECTED from /home/sion/LHW/AndroidProject/frameWork/image/src/main/AndroidManifest.xml
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
