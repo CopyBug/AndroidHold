@@ -13,6 +13,7 @@ public class BaseReqEntity {
     }
 
     public Map<String, Object> getReqMap() {
+        this.reqMap.clear();
         Class<? extends BaseReqEntity> aClass = this.getClass();
         Field[] fields = aClass.getFields();
         for (Field field : fields) {
@@ -20,6 +21,13 @@ public class BaseReqEntity {
             ReqName reqName = field.getAnnotation(ReqName.class);
             if(reqName!=null){
                 String name = reqName.value();
+                try {
+                    reqMap.put(name,field.get(this));
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                String name = field.getName();
                 try {
                     reqMap.put(name,field.get(this));
                 } catch (IllegalAccessException e) {

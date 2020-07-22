@@ -6,22 +6,9 @@ import org.apache.http.params.HttpParams;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.net.FileNameMap;
-import java.net.URLConnection;
-import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
-import okhttp3.FormBody;
-import okhttp3.Headers;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import okhttp3.internal.http.HttpHeaders;
 
 public class HttpUtils {
     /** 将传递进来的参数拼接成 url */

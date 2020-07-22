@@ -3,32 +3,28 @@ package com.example.hwokhttp;
 import com.google.gson.Gson;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Map;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
-import okhttp3.Response;
 
 /**
  * Time       : 2020/07/10 下午1:54
  * Author     : sion
  * Description:
  */
+@SuppressWarnings("TypeParameterHidesVisibleType")
 public class OkPostReq<T> extends BaseOkReq<T> {
 
 
     public OkPostReq(OkHttpClient okHttpClient, String reqUrl) {
         super(okHttpClient, reqUrl);
-
     }
 
     @Override
@@ -56,7 +52,7 @@ public class OkPostReq<T> extends BaseOkReq<T> {
         return Observable.create(new ObservableOnSubscribe<T>() {
             @Override
             public void subscribe(ObservableEmitter<T> emitter) {
-                post(emitter);
+                doPost(RequestBody.create(null, ""), emitter);
             }
         });
     }
@@ -72,51 +68,9 @@ public class OkPostReq<T> extends BaseOkReq<T> {
         });
     }
 
-    protected <T> void post(final ObservableEmitter<T> emitter) {
-        okHttpClient.newCall(builder.url(reqUrl).post(null).build())
-                .enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        emitter.onError(e);
-                        emitter.onComplete();
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) {
-                        try {
-                            String json = response.body().string();
-                            emitter.onNext((T) new Gson().fromJson(json,getClass()));
-                            emitter.onComplete();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                            emitter.onError(new Throwable(e.getMessage() + ""));
-                            emitter.onComplete();
-                        }
-                    }
-                });
-    }
-
     protected <T> void doPost(RequestBody reqBody, final ObservableEmitter<T> emitter) {
-        okHttpClient.newCall(builder.post(reqBody).build())
-                .enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        Throwable throwable = new Throwable(e.getMessage() + "");
-                        emitter.onError(throwable);
-                        emitter.onComplete();
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) {
-                        try {
-                            String json = response.body().string();
-                            emitter.onNext((T) new Gson().fromJson(json, getClass()));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                            emitter.onError(new Throwable(e.getMessage() + ""));
-                        }
-                    }
-                });
+        okHttpClient.newCall(builder.url(HttpUtils.createUrlFromParams(reqUrl, param)).post(reqBody).build())
+                .enqueue((getCallBack(emitter)));
     }
 
     public FormBody formBody() {
@@ -136,10 +90,10 @@ public class OkPostReq<T> extends BaseOkReq<T> {
     public MultipartBody multipartBody() {
         MultipartBody.Builder multipartBody = new MultipartBody.Builder().setType(MultipartBody.FORM);
         for (Map.Entry<String, Object> entry : param.entrySet()) {
-            if(entry.getValue() instanceof File){
-                File r= (File) entry.getValue();
+            if (entry.getValue() instanceof File) {
+                File r = (File) entry.getValue();
                 multipartBody.addFormDataPart(entry.getKey(), r.getName(), RequestBody.create(MediaType.parse("multipart/form-data"), r));
-            }else{
+            } else {
                 multipartBody.addFormDataPart(entry.getKey(), entry.getValue().toString());
             }
         }

@@ -2,11 +2,15 @@ package com.example.hwokhttp;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import androidx.annotation.MainThread;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.net.PortUnreachableException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -45,16 +49,16 @@ public class OkRun {
 
     }
 
-    protected <T> Observable<T> doRun(Builder<T> builder) {
+    protected <T> Observable<T> doRun(Builder builder) {
         if (builder.reqMode == OkMode.GET) {
             //Get请求
             baseOkReq = new OkGetReq<T>(okHttpClient, builder.api);
-            baseOkReq.param=builder.baseReqEntity.getReqMap();
+            baseOkReq.param = builder.baseReqEntity.getReqMap();
             return baseOkReq.<T>doGet();
         } else {
             //POST请求
             baseOkReq = new OkPostReq<T>(okHttpClient, builder.api);
-            baseOkReq.param=builder.baseReqEntity.getReqMap();
+            baseOkReq.param = builder.baseReqEntity.getReqMap();
             switch (builder.reqMode) {
                 case POST:
                     return baseOkReq.doPost();
@@ -63,7 +67,7 @@ public class OkRun {
                 case POST_FORM:
                     return baseOkReq.doPostJsonRx();
                 case POST_FILE:
-                    break;
+                    return baseOkReq.doPostFile();
 
             }
         }
@@ -72,7 +76,7 @@ public class OkRun {
 
     }
 
-    public static class Builder<T> {
+    public static class Builder {
         private String api;
         private OkMode reqMode;
         private BaseReqEntity baseReqEntity;
@@ -96,8 +100,9 @@ public class OkRun {
             return this;
         }
 
-        public  Observable<T> doRun() {
-            return   OkRun.okRun().<T>doRun(this);
+        public <T> Observable<T> doRun() {
+
+            return OkRun.okRun().<T>doRun(this);
         }
     }
 }

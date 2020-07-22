@@ -1,10 +1,10 @@
-package com.example.hwokhttp;
+package com.example.framework.work.entity.resp;
 
-public class BaseReq {
+public class LoginResp {
 
     /**
-     * data :
-     * desc :
+     * data : Mv0Jw9B8WxEOJ89cj*4See4mVZQKy33Q
+     * desc : 登陆成功
      * flag :
      * status : true
      */
@@ -13,6 +13,16 @@ public class BaseReq {
     private String desc;
     private String flag;
     private boolean status;
+
+    @Override
+    public String toString() {
+        return "LoginResp{" +
+                "data='" + data + '\'' +
+                ", desc='" + desc + '\'' +
+                ", flag='" + flag + '\'' +
+                ", status=" + status +
+                '}';
+    }
 
     public String getData() {
         return data;
