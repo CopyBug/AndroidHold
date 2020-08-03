@@ -1,14 +1,38 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-36
-INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-36
-INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-36
+ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
 	package
 		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:11-33
 		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
 		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-9:12
+		INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:1:1-36
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:2:5-63
+uses-permission#android.permission.CAMERA
+ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:4:5-65
+	android:name
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:4:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.PERMISSIONS_STORAGE
+ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:7:5-77
+	android:name
+		ADDED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml:7:22-75
 uses-sdk
 INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\project\AndroidStudio\AndroidHold\image\src\main\AndroidManifest.xml

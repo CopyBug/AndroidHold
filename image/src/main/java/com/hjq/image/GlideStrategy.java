@@ -31,7 +31,7 @@ import com.hjq.image.loader.GlideRoundRadiusTransform;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
 /**
- * author : Android 轮子哥
+ * author : 浩文达摩
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2018/12/26
  * desc   : Glide 加载策略

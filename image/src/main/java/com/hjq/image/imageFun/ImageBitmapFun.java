@@ -71,7 +71,7 @@ public interface ImageBitmapFun {
      * @param act
      * @param respCode
      */
-    void imageOpenCamera(Activity act, int respCode);
+    File imageOpenCamera(Activity act, int respCode);
 
     /**
      * 图像的高亮
@@ -104,6 +104,5 @@ public interface ImageBitmapFun {
      * @return
      */
     Bitmap iamgeZoom(Bitmap image, float scale);
-
 
 }

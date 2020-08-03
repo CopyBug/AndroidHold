@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply from: '../config.gradle'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -30,5 +30,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.4'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
     implementation 'com.google.code.gson:gson:2.8.6'
 }

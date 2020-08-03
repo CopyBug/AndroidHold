@@ -4,12 +4,19 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.View;
+
+import androidx.core.content.FileProvider;
+
+import com.hjq.image.provider.ImagePickerProvider;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -239,11 +246,29 @@ public class ImageBitmapFunImpl implements ImageBitmapFun {
      * @param respCode
      */
     @Override
-    public void imageOpenCamera(Activity act, int respCode) {
-
+    public File imageOpenCamera(Activity act, int respCode) {
+        //拍照存放路径
+        File fileDir = new File(Environment.getExternalStorageDirectory(), "Pictures");
+        if (!fileDir.exists()) {
+            fileDir.mkdir();
+        }
+        String mFilePath = fileDir.getAbsolutePath() + "/IMG_" + System.currentTimeMillis() + ".jpg";
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Uri uri;
+        File imageFile = new File(mFilePath);
+        if (Build.VERSION.SDK_INT >= 24) {
+            uri = FileProvider.getUriForFile(act, ImagePickerProvider.getFileProviderName(act),imageFile);
+        } else {
+            uri = Uri.fromFile(imageFile);
+        }
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); //添加这一句表示对目标应用临时授权该Uri所代表的文件
+        act.startActivityForResult(intent, respCode);
+        return imageFile;
     }
 
     /**
+     *
      * @param bitmap
      * @param highLight 是否高亮
      */
@@ -280,6 +305,11 @@ public class ImageBitmapFunImpl implements ImageBitmapFun {
      */
     @Override
     public Bitmap iamgeZoom(Bitmap image, float scale) {
-        return null;
+        float width = image.getWidth();
+        float height = image.getHeight();
+        Matrix matrix=new Matrix();
+        matrix.setScale(0,0,width*scale,height*scale);
+        return Bitmap.createBitmap(image,0,0,(int)width,(int)height,matrix,false);
+
     }
 }

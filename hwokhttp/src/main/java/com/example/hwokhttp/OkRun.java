@@ -2,6 +2,7 @@ package com.example.hwokhttp;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.AndroidException;
 import android.util.Log;
 
 import androidx.annotation.MainThread;
@@ -15,6 +16,8 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 
 /**
@@ -102,7 +105,7 @@ public class OkRun {
 
         public <T> Observable<T> doRun() {
 
-            return OkRun.okRun().<T>doRun(this);
+            return OkRun.okRun().<T>doRun(this).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
         }
     }
 }

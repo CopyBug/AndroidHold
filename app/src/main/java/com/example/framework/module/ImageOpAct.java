@@ -50,6 +50,7 @@ public class ImageOpAct extends BaseActivity<ActImageOpBinding> implements View.
     private ImageView image_shred1;
     private ImageView image_shred2;
     private ImageView image_merge;
+    private Button image_camera;
     private Button image_photo;
     private Button image_photo_crop;
     private Button image_photo_merge1;
@@ -59,7 +60,9 @@ public class ImageOpAct extends BaseActivity<ActImageOpBinding> implements View.
     private boolean isCrop = false;
     private final int PHOTO_MODE = 999;
     private final int PHOTO_CROP_MODE = 888;
+    private final int PHOTO_CAMERA= 777;
     private Uri cutOut;
+    private File imageOpenCamera;
 
     @Override
     protected int getLayoutId() {
@@ -84,12 +87,14 @@ public class ImageOpAct extends BaseActivity<ActImageOpBinding> implements View.
         image_ho_layout = findViewById(R.id.image_ho_layout);
         image_photo = findViewById(R.id.image_photo);
         image_photo_crop = findViewById(R.id.image_photo_crop);
+        image_camera = findViewById(R.id.image_camera);
         image_save.setOnClickListener(this);
         image_photo_crop.setOnClickListener(this);
         image_photo.setOnClickListener(this);
         image_photo_merge1.setOnClickListener(this);
         image_photo_merge2.setOnClickListener(this);
         image_photo_merge3.setOnClickListener(this);
+        image_camera.setOnClickListener(this);
     }
 
     @Override
@@ -171,7 +176,19 @@ public class ImageOpAct extends BaseActivity<ActImageOpBinding> implements View.
                             .into(image_merge);
                 }
                 break;
-
+            case R.id.image_camera:
+                //打开相机
+                RxPermissions rxPermissions=new RxPermissions(this);
+                rxPermissions.request(Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        .subscribe(new Consumer<Boolean>() {
+                            @Override
+                            public void accept(Boolean aBoolean)  {
+                                if(aBoolean){
+                                    imageOpenCamera = HWImageManager.getInstance().getBitmapFun().imageOpenCamera(ImageOpAct.this, PHOTO_CAMERA);
+                                }
+                            }
+                        });
+                break;
 
         }
     }
@@ -210,7 +227,11 @@ public class ImageOpAct extends BaseActivity<ActImageOpBinding> implements View.
                             .circle(20)
                             .into(my_image);
                 }
-
+            case PHOTO_CAMERA:
+                ImageLoader.with(this)
+                        .load(imageOpenCamera)
+                        .circle(20)
+                        .into(my_image);
                 break;
         }
     }

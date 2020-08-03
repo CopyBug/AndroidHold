@@ -5,3 +5,4 @@ drawable anim_loading
 drawable ic_loading
 drawable image_load_err
 drawable image_loading
+xml image_picker

@@ -1,11 +1,9 @@
 apply plugin: 'com.android.library'
+apply from: '../config.gradle'
 
 android {
-    compileSdkVersion rootProject.ext.compileVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion rootProject.ext.targetVersion
         // 混淆配置
         consumerProguardFiles 'proguard-base.pro'
     }
@@ -13,14 +11,4 @@ android {
     dataBinding {
         enabled = true
     }
-
-}
-
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompatVersion"
-    implementation "com.google.android.material:material:$rootProject.ext.materialVersion"
-    //fastJson 可用于将Java对象转换为其JSON表示。它还可用于将JSON字符串转换为等效的Java对象
-    implementation "com.alibaba:fastjson:1.2.58"
-
 }

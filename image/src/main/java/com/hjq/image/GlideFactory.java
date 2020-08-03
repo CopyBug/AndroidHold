@@ -9,8 +9,7 @@ import com.bumptech.glide.Glide;
 import com.hjq.copy.R;
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/AndroidProject
+ *    author : 浩文达摩
  *    time   : 2018/12/27
  *    desc   : Glide 加工厂
  */

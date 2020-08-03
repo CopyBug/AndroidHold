@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply from: '../config.gradle'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -49,6 +49,7 @@ dependencies {
     implementation project(':image')
     implementation project(':base')
     implementation project(':hwokhttp')
+    implementation project(':ui')
 //  权限申请
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.4'

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.example.ui.view.widget.ProgressView
+    android:layout_centerInParent="true"
+    android:id="@+id/dia_wait_progress"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    app:barColor="@color/colorDialog"
+    app:barWidth="2dp"
+    app:fillRadius="false"
+    app:linearProgress="true"
+    app:progressIndeterminate="true" />
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="@dimen/sp_18"
+        tools:text="加载中"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/dia_wait_progress"
+        android:id="@+id/tv_wait_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+
+</RelativeLayout>

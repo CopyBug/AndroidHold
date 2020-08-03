@@ -9,6 +9,7 @@
     <string name="fn_image_merge_top">图片合并上下</string>
     <string name="fn_image_merge_right">图片合并左右</string>
     <string name="fn_image_merge">图片合并</string>
+    <string name="fn_cache">文字缓存</string>
     <string name="fn_net">网络请求</string>
     <string name="fn_net_get">Get</string>
     <string name="fn_net_post">Post</string>

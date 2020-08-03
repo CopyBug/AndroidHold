@@ -28,5 +28,58 @@
         style="@style/main_tv"
         app:elevation="@dimen/dp_0"
         android:text="@string/fn_net" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SettingBar"/>
+    <com.example.ui.view.widget.SettingBar
+        android:layout_width="match_parent"
+        app:bar_leftText="名字"
+        app:bar_rightText="880634"
+        app:bar_rightIcon="@drawable/arrows_right_ic"
+        android:layout_height="wrap_content"/>
+    <com.example.ui.view.widget.ClearEditText
+        android:id="@+id/edit_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:background="@null"
+        android:paddingVertical="@dimen/dp_10"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:layout_marginTop="20dp"
+        android:hint="请输入文字"
+        android:text="" />
+    <Button
+        android:id="@+id/main_cache"
+        style="@style/main_tv"
+        app:elevation="@dimen/dp_0"
+        android:text="@string/fn_cache" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginVertical="@dimen/dp_10"
+        android:id="@+id/tv_cache"
+        android:layout_height="wrap_content"/>
+    <com.example.ui.view.widget.CountdownView
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/cv_find_countdown"
+        style="@style/CountdownViewStyle" />
+
+    <com.example.ui.view.widget.PasswordEditText
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="123231"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:paddingVertical="@dimen/dp_10"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/main_pay"
+        style="@style/main_tv"
+        app:elevation="@dimen/dp_0"
+        android:text="支付弹窗" />
+
+
 </LinearLayout>
 </androidx.core.widget.NestedScrollView>

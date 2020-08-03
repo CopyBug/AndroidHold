@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import java.io.File;
 
 /**
- * author : Android 轮子哥
+ * author : 浩文达摩
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2018/12/26
  * desc   : 图片加载器

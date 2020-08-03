@@ -1,15 +1,9 @@
 apply plugin: 'com.android.library'
-
+apply from: '../config.gradle'
 android {
-    compileSdkVersion rootProject.ext.compileVersion
-
-    resourcePrefix "image_"
-
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion rootProject.ext.targetVersion
         // 混淆配置
-        consumerProguardFiles 'proguard-glide.pro'
+        consumerProguardFiles 'proguard-base.pro'
     }
     // 数据绑定
     dataBinding {
@@ -18,7 +12,7 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompatVersion"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     //implementation "com.google.android.material:material:$rootProject.ext.materialVersion"
     // 图片加载框架：https://github.com/bumptech/glide
     implementation 'com.github.bumptech.glide:glide:4.10.0'

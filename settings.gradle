@@ -1,2 +1,3 @@
+include ':ui'
 include ':app', ':image', ':base', ':hwokhttp'
-rootProject.name='FrameWork'
+
